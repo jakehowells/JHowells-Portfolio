@@ -396,6 +396,115 @@
 
     .lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
+    /* LANDING PAGES */
+    .lp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .lp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .lp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 2;
+    }
+
+    .lp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .lp-card:hover::before { opacity: 1; }
+
+    .lp-preview {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Overlay blocks interaction so the card hover works cleanly */
+    .lp-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .lp-preview iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1280px;
+      height: 900px;
+      border: none;
+      transform: scale(0.395);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+
+    .lp-info {
+      padding: 28px 32px 32px;
+    }
+
+    .lp-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .lp-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .lp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent1);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .lp-link:hover { opacity: 0.7; }
+
+    .lp-tag {
+      display: inline-flex;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
     /* SKILLS */
     .skills-grid {
       display: grid;
@@ -564,6 +673,7 @@
       .hero { padding: 130px 16px 80px; }
       .section { padding: 72px 16px; }
       .case-grid { grid-template-columns: 1fr; }
+      .lp-grid { grid-template-columns: 1fr; }
       .gallery-grid { columns: 2; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .contact-wrapper { padding: 72px 16px; }
@@ -587,6 +697,7 @@
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#creative">Creative</a></li>
+      <li><a href="#landing-pages">Landing Pages</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -667,6 +778,63 @@
       <div class="gallery-item reveal"><img src="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/planet3.png" alt="Ad creative" loading="lazy"></div>
       <div class="gallery-item reveal"><img src="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/planet4.png" alt="Ad creative" loading="lazy"></div>
       <div class="gallery-item reveal"><img src="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/planet5.png" alt="Ad creative" loading="lazy"></div>
+    </div>
+  </div>
+
+  <!-- LANDING PAGES -->
+  <div class="section" id="landing-pages">
+    <div class="section-label">Landing Pages</div>
+    <h2 class="section-title">Built to convert</h2>
+    <div class="lp-grid">
+
+      <div class="lp-card reveal">
+        <div class="lp-preview">
+          <iframe src="https://marketing.greenlightnetworks.com/general-landing-page" loading="lazy" scrolling="no" tabindex="-1" title="General Landing Page"></iframe>
+        </div>
+        <div class="lp-info">
+          <span class="lp-tag">Bottom-of-Funnel / Paid Media</span>
+          <h3 class="lp-title">Conversion-Focused Landing Page</h3>
+          <p class="lp-desc">Paid media traffic destination, designed to convert. Clean, distraction-free layout designed to move visitors from ad click to address check as efficiently as possible.</p>
+          <a href="https://marketing.greenlightnetworks.com/general-landing-page" target="_blank" class="lp-link">View Live &nearr;</a>
+        </div>
+      </div>
+
+      <div class="lp-card reveal">
+        <div class="lp-preview">
+          <iframe src="https://marketing.greenlightnetworks.com/aprgc350-500" loading="lazy" scrolling="no" tabindex="-1" title="350-500 Mbps Offer Page"></iframe>
+        </div>
+        <div class="lp-info">
+          <span class="lp-tag">Promotional / Limited-Time Offer</span>
+          <h3 class="lp-title">350-500 Mbps Offer Page</h3>
+          <p class="lp-desc">Campaign-specific landing page for a time-limited plan promotion. Anchored around a concrete speed tier to attract mid-market buyers and drive urgency toward sign-up.</p>
+          <a href="https://marketing.greenlightnetworks.com/aprgc350-500" target="_blank" class="lp-link">View Live &nearr;</a>
+        </div>
+      </div>
+
+      <div class="lp-card reveal">
+        <div class="lp-preview">
+          <iframe src="https://marketing.greenlightnetworks.com/construction" loading="lazy" scrolling="no" tabindex="-1" title="Construction / Preorder Page"></iframe>
+        </div>
+        <div class="lp-info">
+          <span class="lp-tag">Preorder / Pipeline Building</span>
+          <h3 class="lp-title">Construction Preorder Page</h3>
+          <p class="lp-desc">Waitlist capture page for markets where fiber infrastructure is still being built. Converts ad traffic in pre-launch areas into a qualified lead pipeline before a single install opens.</p>
+          <a href="https://marketing.greenlightnetworks.com/construction" target="_blank" class="lp-link">View Live &nearr;</a>
+        </div>
+      </div>
+
+      <div class="lp-card reveal">
+        <div class="lp-preview">
+          <iframe src="https://marketing.greenlightnetworks.com/gold-medal-internet" loading="lazy" scrolling="no" tabindex="-1" title="Gold Medal Internet Campaign Page"></iframe>
+        </div>
+        <div class="lp-info">
+          <span class="lp-tag">Campaign / Themed Creative</span>
+          <h3 class="lp-title">Gold Medal Internet</h3>
+          <p class="lp-desc">Olympics-themed campaign page built around the "Gold Medal Internet" concept. Demonstrates how brand positioning can be layered into a landing page to reinforce ad creative messaging end to end.</p>
+          <a href="https://marketing.greenlightnetworks.com/gold-medal-internet" target="_blank" class="lp-link">View Live &nearr;</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
