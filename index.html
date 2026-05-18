@@ -55,13 +55,7 @@
       box-shadow: 0 2px 20px rgba(0,0,0,0.06);
     }
 
-    .nav-name {
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--text);
-      text-decoration: none;
-    }
-
+    .nav-name { font-weight: 700; font-size: 15px; color: var(--text); text-decoration: none; }
     .nav-links { display: flex; gap: 8px; list-style: none; }
 
     .nav-links a {
@@ -74,10 +68,7 @@
       transition: background 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover {
-      background: var(--surface);
-      color: var(--text);
-    }
+    .nav-links a:hover { background: var(--surface); color: var(--text); }
 
     /* HERO */
     .hero {
@@ -85,7 +76,6 @@
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
-      position: relative;
     }
 
     .hero-badge {
@@ -103,8 +93,7 @@
     }
 
     .hero-badge-dot {
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
     }
@@ -173,11 +162,9 @@
 
     .btn-secondary:hover { background: var(--surface2); transform: translateY(-1px); }
 
-    /* STATS */
     .hero-stats {
       display: flex;
       justify-content: center;
-      gap: 0;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -206,11 +193,7 @@
       margin-bottom: 4px;
     }
 
-    .hero-stat-label {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--muted);
-    }
+    .hero-stat-label { font-size: 12px; font-weight: 500; color: var(--muted); }
 
     /* SECTION */
     .section {
@@ -243,12 +226,100 @@
       margin-bottom: 48px;
     }
 
-    /* CASE STUDIES */
-    .case-grid {
+    /* ABOUT */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Gradient ring around headshot */
+    .about-photo-ring {
+      background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3));
+      padding: 3px;
+      border-radius: 26px;
+      box-shadow: 0 0 40px rgba(108,71,255,0.2), 0 0 80px rgba(255,107,107,0.1);
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 23px;
+      display: block;
+    }
+
+    .about-right { display: flex; flex-direction: column; gap: 24px; }
+
+    /* Highlight chips grid */
+    .about-highlights {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 10px;
     }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .highlight-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .highlight-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .highlight-value.grad-text {
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-download:hover { background: var(--surface2); transform: translateY(-1px); }
+    .btn-download svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* CASE STUDIES */
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
     .case-card {
       background: var(--surface);
@@ -270,11 +341,7 @@
       transition: opacity 0.3s;
     }
 
-    .case-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-    }
-
+    .case-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
     .case-card:hover::before { opacity: 1; }
 
     .case-tag {
@@ -301,33 +368,12 @@
       margin-bottom: 4px;
     }
 
-    .case-result-label {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .case-title {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-      line-height: 1.25;
-    }
-
-    .case-desc {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-weight: 400;
-    }
+    .case-result-label { font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 24px; }
+    .case-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 16px; line-height: 1.25; }
+    .case-desc { font-size: 15px; color: var(--muted); line-height: 1.75; font-weight: 400; }
 
     /* CREATIVE */
-    .gallery-grid {
-      columns: 3;
-      column-gap: 12px;
-    }
+    .gallery-grid { columns: 3; column-gap: 12px; }
 
     .gallery-item {
       break-inside: avoid;
@@ -339,18 +385,8 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .gallery-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s;
-    }
-
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+    .gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
     .gallery-item:hover img { transform: scale(1.03); }
 
     /* LIGHTBOX */
@@ -383,8 +419,7 @@
       border: 1px solid rgba(255,255,255,0.15);
       color: white;
       font-size: 20px;
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -397,11 +432,7 @@
     .lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
     /* LANDING PAGES */
-    .lp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .lp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
     .lp-card {
       background: var(--surface);
@@ -423,11 +454,7 @@
       z-index: 2;
     }
 
-    .lp-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-    }
-
+    .lp-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
     .lp-card:hover::before { opacity: 1; }
 
     .lp-preview {
@@ -439,59 +466,19 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* Overlay blocks interaction so the card hover works cleanly */
-    .lp-preview::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
+    .lp-preview::after { content: ''; position: absolute; inset: 0; z-index: 1; }
 
     .lp-preview iframe {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 1280px;
-      height: 900px;
+      top: 0; left: 0;
+      width: 1280px; height: 900px;
       border: none;
       transform: scale(0.395);
       transform-origin: top left;
       pointer-events: none;
     }
 
-    .lp-info {
-      padding: 28px 32px 32px;
-    }
-
-    .lp-title {
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
-      line-height: 1.25;
-    }
-
-    .lp-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    .lp-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent1);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: opacity 0.2s;
-    }
-
-    .lp-link:hover { opacity: 0.7; }
+    .lp-info { padding: 28px 32px 32px; }
 
     .lp-tag {
       display: inline-flex;
@@ -505,12 +492,24 @@
       margin-bottom: 16px;
     }
 
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    .lp-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; line-height: 1.25; }
+    .lp-desc { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 400; margin-bottom: 20px; }
+
+    .lp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent1);
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
+
+    .lp-link:hover { opacity: 0.7; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
     .skill-card {
       background: var(--surface);
@@ -520,14 +519,10 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .skill-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
-    }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
 
     .skill-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border-radius: 10px;
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
       margin-bottom: 16px;
@@ -538,11 +533,7 @@
     .skill-card:nth-child(3) .skill-icon { background: linear-gradient(135deg, #00C9FF, #6C47FF); }
     .skill-card:nth-child(4) .skill-icon { background: linear-gradient(135deg, var(--accent3), #FF6B6B); }
 
-    .skill-card-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
+    .skill-card-title { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
 
     .skill-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 
@@ -557,19 +548,14 @@
 
     .skill-list li::before {
       content: '';
-      width: 4px;
-      height: 4px;
+      width: 4px; height: 4px;
       border-radius: 50%;
       background: var(--border);
       flex-shrink: 0;
     }
 
     /* CONTACT */
-    .contact-wrapper {
-      padding: 100px 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .contact-wrapper { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
 
     .contact-card {
       background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
@@ -611,12 +597,7 @@
       line-height: 1.05;
     }
 
-    .contact-sub {
-      font-size: 17px;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
+    .contact-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 40px; font-weight: 400; }
 
     .contact-email {
       display: inline-flex;
@@ -658,12 +639,7 @@
     footer span { font-size: 13px; color: var(--muted); font-weight: 400; }
 
     /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* MOBILE */
@@ -672,8 +648,9 @@
       .nav-links { display: none; }
       .hero { padding: 130px 16px 80px; }
       .section { padding: 72px 16px; }
-      .case-grid { grid-template-columns: 1fr; }
-      .lp-grid { grid-template-columns: 1fr; }
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo-ring { max-width: 200px; }
+      .case-grid, .lp-grid { grid-template-columns: 1fr; }
       .gallery-grid { columns: 2; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .contact-wrapper { padding: 72px 16px; }
@@ -686,7 +663,7 @@
       .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
       .hero-stat:last-child { border-bottom: none; }
       .gallery-grid { columns: 1; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .skills-grid, .about-highlights { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -695,9 +672,10 @@
   <nav>
     <a href="#" class="nav-name">Jake Howells</a>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#creative">Creative</a></li>
-      <li><a href="#landing-pages">Landing Pages</a></li>
+      <li><a href="#landing-pages">Pages</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -733,6 +711,71 @@
     </div>
   </div>
 
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <div class="section-label">About</div>
+    <div class="about-layout reveal">
+      <div class="about-photo-ring">
+        <img
+          src="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/jhowellsheadshot.png"
+          alt="Jake Howells"
+          class="about-photo"
+        >
+      </div>
+      <div class="about-right">
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-label">Experience</div>
+            <div class="highlight-value">5+ Years in Marketing</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Education</div>
+            <div class="highlight-value">B.S. Marketing &middot; 3.8 GPA</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Specialty</div>
+            <div class="highlight-value grad-text">Paid Media & Creative Strategy</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Channels</div>
+            <div class="highlight-value">Meta, Google, OTT, Radio, Reddit</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Ad Spend Managed</div>
+            <div class="highlight-value grad-text">$1M+ Annually</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Background</div>
+            <div class="highlight-value">ISP, Healthcare, Freelance</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Based In</div>
+            <div class="highlight-value">Scranton, PA</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-label">Open To</div>
+            <div class="highlight-value grad-text">Director-Level Roles</div>
+          </div>
+        </div>
+        <div class="about-actions">
+          <a href="#work" class="btn-primary">See My Work</a>
+          <a
+            href="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/Jake_Howells_Resume%20(1).pdf"
+            target="_blank"
+            class="btn-download"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- WORK -->
   <div class="section" id="work">
     <div class="section-label">Work</div>
@@ -743,14 +786,14 @@
         <div class="case-result-num">2x</div>
         <div class="case-result-label">Orders in a single month</div>
         <h3 class="case-title">From 400 to 817 Orders</h3>
-        <p class="case-desc">Paid media had begun to plateau. After auditing the channel mix, I cut Performance Max entirely and introduced MNTN as a replacement - reallocating budget to channels that were actually converting and overhauling creative across the board. MNTN became the most efficient driver of orders in the account. The result: orders grew from 400 to 817 in a single month, without increasing overall spend.</p>
+        <p class="case-desc">Paid media had begun to plateau. After auditing the channel mix, I cut Performance Max entirely and introduced MNTN as a replacement, reallocating budget to channels that were actually converting and overhauling creative across the board. MNTN became the most efficient driver of orders in the account. The result: orders grew from 400 to 817 in a single month, without increasing overall spend.</p>
       </div>
       <div class="case-card">
         <span class="case-tag">Multi-Market Paid Media</span>
         <div class="case-result-num">$166</div>
         <div class="case-result-label">CPA across 8 markets</div>
         <h3 class="case-title">Growth Across Eight Markets</h3>
-        <p class="case-desc">Owned end-to-end paid media across Meta, Google Search, Performance Max, Display, Reddit, radio, and OTT for a regional fiber provider spanning New York, Pennsylvania, and Maryland. 3,800+ customer acquisitions at $166 CPA -- for a high-friction, address-qualified product requiring a physical installation appointment.</p>
+        <p class="case-desc">Owned end-to-end paid media across Meta, Google Search, Performance Max, Display, Reddit, radio, and OTT for a regional fiber provider spanning New York, Pennsylvania, and Maryland. 3,800+ customer acquisitions at $166 CPA, for a high-friction, address-qualified product requiring a physical installation appointment.</p>
       </div>
     </div>
   </div>
@@ -786,19 +829,17 @@
     <div class="section-label">Landing Pages</div>
     <h2 class="section-title">Built to convert</h2>
     <div class="lp-grid">
-
       <div class="lp-card reveal">
         <div class="lp-preview">
           <iframe src="https://marketing.greenlightnetworks.com/general-landing-page" loading="lazy" scrolling="no" tabindex="-1" title="General Landing Page"></iframe>
         </div>
         <div class="lp-info">
-          <span class="lp-tag">Bottom-of-Funnel / Paid Media</span>
-          <h3 class="lp-title">Conversion-Focused Landing Page</h3>
-          <p class="lp-desc">Paid media traffic destination, designed to convert. Clean, distraction-free layout designed to move visitors from ad click to address check as efficiently as possible.</p>
+          <span class="lp-tag">Top-of-Funnel / Paid Media</span>
+          <h3 class="lp-title">General Landing Page</h3>
+          <p class="lp-desc">Broad paid media traffic destination covering all eight markets. Clean, distraction-free layout designed to move visitors from ad click to address check as efficiently as possible.</p>
           <a href="https://marketing.greenlightnetworks.com/general-landing-page" target="_blank" class="lp-link">View Live &nearr;</a>
         </div>
       </div>
-
       <div class="lp-card reveal">
         <div class="lp-preview">
           <iframe src="https://marketing.greenlightnetworks.com/aprgc350-500" loading="lazy" scrolling="no" tabindex="-1" title="350-500 Mbps Offer Page"></iframe>
@@ -810,7 +851,6 @@
           <a href="https://marketing.greenlightnetworks.com/aprgc350-500" target="_blank" class="lp-link">View Live &nearr;</a>
         </div>
       </div>
-
       <div class="lp-card reveal">
         <div class="lp-preview">
           <iframe src="https://marketing.greenlightnetworks.com/construction" loading="lazy" scrolling="no" tabindex="-1" title="Construction / Preorder Page"></iframe>
@@ -822,7 +862,6 @@
           <a href="https://marketing.greenlightnetworks.com/construction" target="_blank" class="lp-link">View Live &nearr;</a>
         </div>
       </div>
-
       <div class="lp-card reveal">
         <div class="lp-preview">
           <iframe src="https://marketing.greenlightnetworks.com/gold-medal-internet" loading="lazy" scrolling="no" tabindex="-1" title="Gold Medal Internet Campaign Page"></iframe>
@@ -834,7 +873,6 @@
           <a href="https://marketing.greenlightnetworks.com/gold-medal-internet" target="_blank" class="lp-link">View Live &nearr;</a>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -904,6 +942,7 @@
         </div>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/jakehowells/" class="contact-link" target="_blank">LinkedIn</a>
+          <a href="https://czmaxvovsvyknrmdnnfd.supabase.co/storage/v1/object/public/portfolio-assets/Jake_Howells_Resume%20(1).pdf" class="contact-link" target="_blank">Resume</a>
         </div>
       </div>
     </div>
