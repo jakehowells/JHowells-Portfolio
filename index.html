@@ -70,6 +70,67 @@
 
     .nav-links a:hover { background: var(--surface); color: var(--text); }
 
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      z-index: 299;
+      padding: 12px;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+
+    .mobile-menu a:hover { background: var(--surface); }
+
     /* HERO */
     .hero {
       padding: 160px 24px 100px;
@@ -646,6 +707,7 @@
     @media (max-width: 900px) {
       nav { width: calc(100% - 32px); top: 12px; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
       .hero { padding: 130px 16px 80px; }
       .section { padding: 72px 16px; }
       .about-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -679,7 +741,19 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#creative" class="mobile-link">Creative</a>
+    <a href="#landing-pages" class="mobile-link">Landing Pages</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
 
   <!-- HERO -->
   <div class="hero">
@@ -690,18 +764,18 @@
     <h1 class="hero-headline">
       Jake Howells<br><span class="grad">Marketing Portfolio</span>
     </h1>
-    <p class="hero-sub">Paid media strategy, creative production, and performance analytics for regional fiber ISPs.</p>
+    <p class="hero-sub">Paid media strategy, creative production, and performance analytics for regional fiber ISPs. Eight markets. Real results.</p>
     <div class="hero-cta-row">
       <a href="#work" class="btn-primary">View Work</a>
       <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-val">4,200+</div>
+        <div class="hero-stat-val">3,800+</div>
         <div class="hero-stat-label">Customers Acquired</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val">$164</div>
+        <div class="hero-stat-val">$166</div>
         <div class="hero-stat-label">Average CPA</div>
       </div>
       <div class="hero-stat">
@@ -738,7 +812,7 @@
           </div>
           <div class="highlight-card">
             <div class="highlight-label">Channels</div>
-            <div class="highlight-value">Meta, Google, OTT, Radio, Reddit, CTV</div>
+            <div class="highlight-value">Meta, Google, OTT, Radio, Reddit</div>
           </div>
           <div class="highlight-card">
             <div class="highlight-label">Ad Spend Managed</div>
@@ -786,14 +860,14 @@
         <div class="case-result-num">2x</div>
         <div class="case-result-label">Orders in a single month</div>
         <h3 class="case-title">From 400 to 817 Orders</h3>
-        <p class="case-desc">Paid media had begun to plateau. After auditing the channel mix, Performance Max was cut entirely and MNTN was introduced as a replacement. Budget was reallocated to channels that were actually converting and overhauling creative across the board. MNTN became the most efficient driver of orders in the account. The result: orders grew from 400 to 817 in a single month, without increasing overall spend.</p>
+        <p class="case-desc">Paid media had begun to plateau. After auditing the channel mix, I cut Performance Max entirely and introduced MNTN as a replacement, reallocating budget to channels that were actually converting and overhauling creative across the board. MNTN became the most efficient driver of orders in the account. The result: orders grew from 400 to 817 in a single month, without increasing overall spend.</p>
       </div>
       <div class="case-card">
         <span class="case-tag">Multi-Market Paid Media</span>
-        <div class="case-result-num">$164</div>
+        <div class="case-result-num">$166</div>
         <div class="case-result-label">CPA across 8 markets</div>
         <h3 class="case-title">Growth Across Eight Markets</h3>
-        <p class="case-desc">Owned end-to-end paid media across Meta, Google Search, Performance Max, Display, Reddit, radio, and OTT for a regional fiber provider spanning New York, Pennsylvania, and Maryland. 4,200+ customer acquisitions at $164 CPA, for a high-friction, address-qualified product requiring a physical installation appointment.</p>
+        <p class="case-desc">Owned end-to-end paid media across Meta, Google Search, Performance Max, Display, Reddit, radio, and OTT for a regional fiber provider spanning New York, Pennsylvania, and Maryland. 3,800+ customer acquisitions at $166 CPA, for a high-friction, address-qualified product requiring a physical installation appointment.</p>
       </div>
     </div>
   </div>
@@ -960,6 +1034,21 @@
   </div>
 
   <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
